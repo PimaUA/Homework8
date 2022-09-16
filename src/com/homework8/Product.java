@@ -39,7 +39,7 @@ public class Product implements Comparable<Product> {
     public static Product getCheapestBook(List<Product> products, String checkedType) {
         Product cheapestProduct = products.stream().filter(product -> product.type.equals(checkedType))
                 .min(Product::compareTo)
-                .orElseThrow(() -> new ProductNotFoundException("Product " + checkedType + "not found"));
+                .orElseThrow(() -> new ProductNotFoundException("Product " + checkedType + " not found"));
         System.out.println(cheapestProduct);
         return cheapestProduct;
     }
